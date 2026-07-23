@@ -14,4 +14,18 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\01_基础语法\test01.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\01_基础语法\test02.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test03.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test04.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>
