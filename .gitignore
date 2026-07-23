@@ -8,3 +8,6 @@ x64/
 *.ilk
 *.suo
 *.user
+*.vcxproj
+*.vcxproj.filters
+*.sln
