@@ -10,7 +10,7 @@ int main() {
 	scanf("%d", &num);
 
 	while(num != 0){
-		
+
 		int a = num % 10;
 		printf("%d ", a);
 
