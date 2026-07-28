@@ -5,4 +5,5 @@
   </Configurations>
   <Project Path="01_基础语法/01_基础语法.vcxproj" Id="d14546ea-fb17-45e9-9a44-bcfc7edfa7b2" />
   <Project Path="02_流程控制/02_流程控制.vcxproj" Id="7fd0bcd8-1201-4f08-ad8a-3118a1286ab1" />
+  <Project Path="03_数组/03_数组.vcxproj" Id="697ff6d5-8e79-4109-89d9-ef11a365bd65" />
 </Solution>
