@@ -1,12 +1,11 @@
-//#define _CRT_SECURE_NO_WARNINGS
-//#include <stdio.h>
-//#include <stdlib.h>
-//#include <time.h>
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 //剪刀石头布游戏
 
-/*
-int main() {
+int main01() {
 	srand((unsigned int)time(NULL));
 
 	//记录玩家的出招
@@ -36,5 +35,6 @@ int main() {
 	else {
 		printf("你输了,电脑出的 %c", computer);
 	}
+
+	return 0;
 }
-*/

@@ -1,7 +1,7 @@
-//#define _CRT_SECURE_NO_WARNINGS
-//#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
 
-//输⼊⼀个正整数，打印所有⼩于或者等于这个数的，正偶数
+//输⼊⼀个正整数，打印所有⼩于或者等于这个数的，正偶数
 
 /*
 int main() {
@@ -17,11 +17,12 @@ int main() {
 		}
 		x++;
 	}
+
+	return 0;
 }
 */
 
-/*
-int main() {
+int main03() {
 	int num = 0;
 	scanf("%d", &num);
 
@@ -31,5 +32,6 @@ int main() {
 		x += 2;
 		//x = x + 2;
 	}
+
+	return 0;
 }
-*/

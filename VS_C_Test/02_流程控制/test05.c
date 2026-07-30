@@ -1,11 +1,10 @@
-//#define _CRT_SECURE_NO_WARNINGS
-//#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
 
 //找出100~200之间的素数，并打印在屏幕上
 //注：素数⼜称质数，只能被1和本⾝整除的数字
 
-/*
-int main() {
+int main05() {
 	//生成100~200之间的数字
 	for (int i = 100;i <= 200;i++) {
 		
@@ -29,5 +28,6 @@ int main() {
 			printf("%d\n", i);
 		}
 	}
+
+	return 0;
 }
-*/

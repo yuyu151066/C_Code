@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-int Main() {
+int main06() {
 	int minutes = 0;
 
 	//while循环用于让程序一直执行
@@ -22,4 +22,5 @@ int Main() {
 		}
 	}
 
+	return 0;
 }

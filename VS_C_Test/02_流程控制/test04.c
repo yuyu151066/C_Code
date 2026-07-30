@@ -1,10 +1,9 @@
-//#define _CRT_SECURE_NO_WARNINGS
-//#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
 
 //模拟游戏打boss时，攻击掉⾎的场景
 
-/*
-int main() {
+int main04() {
 	//boss的血量
 	int boss_hp = 1300;
 	
@@ -24,5 +23,6 @@ int main() {
 	}
 	printf("----------------------------------------------------\n");
 	printf("恭喜你击败了boss，获得极品装备！！！\n");
+
+	return 0;
 }
-*/

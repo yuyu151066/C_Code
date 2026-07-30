@@ -1,11 +1,11 @@
-//#define _CRT_SECURE_NO_WARNINGS
-//#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
 
 //输⼊⼀个正的整数，逆序打印这个整数的每⼀位。
 //例如：输⼊：1234，输出：4 3 2 1
 
-/*
-int main() {
+
+int main02() {
 	int num;
 	scanf("%d", &num);
 
@@ -17,5 +17,6 @@ int main() {
 		num = num / 10;
 		//num /= 10;
 	}
+
+	return 0;
 }
-*/

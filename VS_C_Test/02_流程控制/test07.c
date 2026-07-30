@@ -36,7 +36,7 @@ void game() {
 	}
 }
 
-int main() {
+int main07() {
 
 	srand((unsigned int)time(NULL));
 
