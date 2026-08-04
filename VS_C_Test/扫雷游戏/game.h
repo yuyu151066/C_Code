@@ -1,6 +1,9 @@
 #pragma once
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
+#include <stdbool.h>
+
 
 #define X 9			//棋盘的列数
 #define Y 9			//棋盘的行数
@@ -13,7 +16,10 @@
 void InitBoard(char arr[YS][XS], int x, int y, char set);
 
 //声明打印游戏区的函数
-void DispalyBoard(char arr[YS][XS], int x, int y);
+void DisplayBoard(char arr[YS][XS], int x, int y);
 
 //声明布置雷的函数
-SetMine(char arr[Y][X],int x,int y);
+void SetMine(char arr[YS][XS],int x,int y);
+
+//声明排查雷的函数
+FindMine(char mine[YS][XS], char show[YS][XS], int x, int y);

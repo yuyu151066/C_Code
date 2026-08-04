@@ -6,6 +6,10 @@ void game();
 
 int main()
 {
+
+	//把系统时间设定为rand函数的种子，防止多次运行，随机数相同
+	srand((unsigned)time(NULL));
+
 	//游戏主菜单
 	int input = 0;
 	do 
@@ -26,12 +30,6 @@ int main()
 			break;
 		}
 	} while (input);
-
-	
-
-
-
-
 
 	return 0;
 }
@@ -57,14 +55,13 @@ void game()
 	InitBoard(show,XS,YS,'*');
 
 	//布置雷
-	//把系统时间设定为rand函数的种子，防止多次运行，随机数相同
-	srand((unsigned)time(NULL));
 	SetMine(mine,X,Y);
 
 	//打印游戏区域
-	DispalyBoard(mine, X, Y);
-	DispalyBoard(show, X, Y);
+	//DisplayBoard(mine, X, Y);
+	DisplayBoard(show, X, Y);
 
-
+	//排查雷
+	FindMine(mine,show,X,Y);
 }
 
