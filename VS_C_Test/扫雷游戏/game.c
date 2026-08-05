@@ -79,11 +79,9 @@ FindMine(char mine[YS][XS], char show[YS][XS], int x, int y)
 		int playerX = 0;
 		int playerY = 0;
 
-		printf("请输入行：");
-		scanf("%d", &playerY);
-		printf("请输入列：");
-		scanf("%d", &playerX);
-
+		printf("请输入行要排查的坐标：");
+		scanf("%d %d", &playerY,&playerX);
+	
 		//判断输入的坐标是否合法
 		if (playerX >= 1 && playerX <= x && playerY >= 1 && playerY <= y)
 		{

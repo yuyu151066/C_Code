@@ -8,5 +8,7 @@
   <Project Path="03_数组/03_数组.vcxproj" Id="8545d9e4-ff66-47c0-8c83-9b3781236aea" />
   <Project Path="04_函数/04_函数.vcxproj" Id="b68e67a3-9653-451e-8be9-5e1f2b90ae16" />
   <Project Path="05_递归/05_递归.vcxproj" Id="1c4c82ff-5143-4740-bd84-73c3541a3f14" />
+  <Project Path="06_调试/06_调试.vcxproj" Id="f4e00ded-2e44-4f9a-895b-e41af58d22f3" />
   <Project Path="扫雷游戏/扫雷游戏.vcxproj" Id="7ca3e171-6511-462e-8045-f55b4a1d98ff" />
+  <Project Path="扫雷游戏test/扫雷游戏test.vcxproj" Id="b9edad01-7901-477e-a9bc-ce898579aa59" />
 </Solution>
