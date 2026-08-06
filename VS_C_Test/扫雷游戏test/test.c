@@ -2,12 +2,14 @@
 #include "game.h"
 
 void PrintMenu();
-
-//把和游戏运行相关的代码都放到game.c文件中
+void game();
 
 //游戏菜单
 int main()
 {
+	//把时间作为rand函数的种子，防止出现短时间内多次运行，产生相同随机数的情况
+	srand((unsigned)time(NULL));
+
 	int UserSelect = 0;
 	do
 	{
@@ -20,7 +22,7 @@ int main()
 		switch (UserSelect)
 		{
 		case 1:
-			printf("开始游戏了\n");
+			game();
 			break;
 		case 2:
 			printf("游戏已退出\n");
@@ -32,12 +34,6 @@ int main()
 		}
 	} while (UserSelect);
 
-
-
-
-
-
-
 	return 0;
 }
 
@@ -48,4 +44,31 @@ void PrintMenu()
 	printf("-----1.开始游戏-----\n");
 	printf("-----2.退出游戏-----\n");
 	printf("-------------------\n");
+}
+
+//此game函数用于实现游戏功能
+void game()
+{
+	//创建mine和show数组，分别存储雷的信息和排雷的信息
+	char mine[HANGS][LIES];
+	char show[HANGS][LIES];
+
+	//给mine和show初始化，零表示不是雷，一表示是雷
+	ArrayInit(mine, '0');
+	ArrayInit(show, '*');
+
+	//向mine数组中随机布置雷
+	MineSetRandom(mine, HANG, LIE);
+
+	//打印游戏区域
+	PrintArray(mine, HANG, LIE);
+	PrintArray(show, HANG, LIE);
+
+	//排雷
+	FindMine(mine, show, HANG, LIE);
+
+
+
+
+
 }
