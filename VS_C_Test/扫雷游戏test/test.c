@@ -4,6 +4,9 @@
 void PrintMenu();
 void game();
 
+//全局变量，记录每局游戏开始的时间
+time_t game_start_time = 0;
+
 //游戏菜单
 int main()
 {
@@ -65,6 +68,8 @@ void game()
 	PrintArray(show, HANG, LIE);
 
 	//排雷
+	//记录游戏开始时间，用于计时功能
+	game_start_time = time(NULL);
 	FindMine(mine, show, HANG, LIE);
 
 

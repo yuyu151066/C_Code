@@ -68,23 +68,54 @@ static  unsigned GetAroundMineCount(char mine[HANGS][LIES], int y, int x)
 //定义FindMine函数，此函数用于排雷
 void FindMine(char mine[HANGS][LIES], char show[HANGS][LIES], int hang, int lie)
 {
-	while (true)
+	//计数器，记录剩余可发现雷的个数，count为0时即胜利
+	int count = MINE_NUMBER;
+
+	while (count > 0)
 	{
-		//玩家输入排雷坐标
+		//玩家输入排雷坐标和操作类型
 		int FindMineHang = 0;
 		int FinfMineLie = 0;
+		int action = 0;  //操作类型：0表示排雷，1表示标记/取消标记
 
-		printf("请输入坐标：");
-		scanf("%d %d", &FindMineHang, &FinfMineLie);
+		printf("请输入坐标和操作(0排雷 1标记)：");
+		scanf("%d %d %d", &FindMineHang, &FinfMineLie, &action);
 
 		//判断输入的坐标是否合法
 		if (FindMineHang >= 1 && FindMineHang <= hang && FinfMineLie >= 1 && FinfMineLie <= lie)
 		{
+			//标记雷的操作：action为1时，切换标记状态
+			if (action == 1)
+			{
+				if (show[FindMineHang][FinfMineLie] == '*')
+				{
+					show[FindMineHang][FinfMineLie] = '#';  //标记为雷
+				}
+				else if (show[FindMineHang][FinfMineLie] == '#')
+				{
+					show[FindMineHang][FinfMineLie] = '*';  //取消标记
+				}
+				else
+				{
+					printf("该位置已排查，无法标记\n");
+				}
+				//打印地图并显示已用时间
+				PrintArray(show, HANG, LIE);
+				time_t elapsed = time(NULL) - game_start_time;
+				printf("已用时间：%lld秒\n", (long long)elapsed);
+				continue;
+			}
+
+			//判断输入的坐标是否已经标记过，标记过的位置需先取消标记才能排雷
+			if (show[FindMineHang][FinfMineLie] == '#')
+			{
+				printf("该位置已标记，请先取消标记后再排雷\n");
+				continue;
+			}
 
 			//判断输入的坐标是否已经排查过了
 			if (show[FindMineHang][FinfMineLie] == '*')
 			{
-
 				//判断输入的坐标是否是雷
 				if (mine[FindMineHang][FinfMineLie] == '0')
 				{
@@ -95,13 +126,20 @@ void FindMine(char mine[HANGS][LIES], char show[HANGS][LIES], int hang, int lie)
 					//在show数组中显示出来
 					show[FindMineHang][FinfMineLie] = MineCount;
 
-					//再打印一边show数组，使玩家看到变化
-					PrintArray(show, HANG, LIE);
+					//排查出一个雷，让count减1
+					count--;
 
+				//再打印一边show数组，使玩家看到变化
+				PrintArray(show, HANG, LIE);
+
+				//计算并显示从游戏开始消耗的时间（秒）
+				time_t elapsed = time(NULL) - game_start_time;
+				printf("已用时间：%lld秒\n", (long long)elapsed);
 				}
 				else
 				{
 					printf("此处是雷，你被炸死了\n");
+					return;
 				}
 			}
 			else
@@ -115,20 +153,7 @@ void FindMine(char mine[HANGS][LIES], char show[HANGS][LIES], int hang, int lie)
 		}
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	printf("游戏胜利\n");
 }
 
 

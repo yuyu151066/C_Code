@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <time.h>
 
 //这两个常量表示游戏区域的长和宽
 #define HANG 9
@@ -24,3 +25,6 @@ void MineSetRandom(char arr[HANGS][LIES], int hang, int lie);
 
 //声明FindMine函数
 void FindMine(char mine[HANGS][LIES], char show[HANGS][LIES], int hang, int lie);
+
+//外部变量，记录游戏开始的时间戳
+extern time_t game_start_time;
